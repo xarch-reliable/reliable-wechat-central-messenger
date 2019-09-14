@@ -7,7 +7,7 @@ package org.xarch.reliable.config.event;
  * <b>media_id,view_limited</b><br/>
  * 仅限第三方平台旗下未微信认证（具体而言，是资质认证未通过）的订阅号准备的事件类型,没有事件推送
  * 
- * @author Wei
+ * @author wancy
  *
  */
 public enum EventType {

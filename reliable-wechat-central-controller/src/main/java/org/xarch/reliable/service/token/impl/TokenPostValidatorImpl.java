@@ -7,7 +7,7 @@ import org.xarch.reliable.model.domain.wxinfo.token.GetTicketResponse;
 import org.xarch.reliable.config.wxinfo.WeixinConfiguration;
 import org.xarch.reliable.model.domain.wxinfo.token.GetAccessTokenResponse;
 import org.xarch.reliable.service.token.TokenPostValidator;
-import org.xarch.reliable.utils.http.WeixinHttpUtils;
+import org.xarch.reliable.utils.http.WeChatDoHttp;
 
 @Component
 public class TokenPostValidatorImpl implements TokenPostValidator {
@@ -19,7 +19,7 @@ public class TokenPostValidatorImpl implements TokenPostValidator {
 	public GetAccessTokenResponse PostInfo() {
 		String appid = weixinConfiguration.getAppid();
 		String secret = weixinConfiguration.getAppsecret();
-		return WeixinHttpUtils.HttpGetAccessToken(appid, secret).block();
+		return WeChatDoHttp.HttpGetAccessToken(appid, secret).block();
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class TokenPostValidatorImpl implements TokenPostValidator {
 
 	@Override
 	public GetTicketResponse PostInfo(String access_token) {
-		return WeixinHttpUtils.HttpGetTiket(access_token).block();
+		return WeChatDoHttp.HttpGetTiket(access_token).block();
 	}
 
 	@Override
