@@ -13,6 +13,8 @@ import org.xarch.reliable.service.CustomerServer;
 import org.xarch.reliable.utils.BaseResultTools;
 import org.xarch.reliable.utils.http.WebHttpUtil;
 
+import reactor.core.publisher.Mono;
+
 @Service
 public class CustomerDispatchImpl implements CustomerDispatch {
 
@@ -66,7 +68,8 @@ public class CustomerDispatchImpl implements CustomerDispatch {
 		}
 		sendMap.put("touser", touseropenid);
 		sendMap.put("msgtype", msgtype);
-		webHttpUtil.sendCustomerMessage(BaseResultTools.JsonObjectToStr(sendMap));
+		Mono<String> res = webHttpUtil.sendCustomerMessage(BaseResultTools.JsonObjectToStr(sendMap));
+		sendMap.put("data", res.block());
 		return sendMap;
 	}
 
