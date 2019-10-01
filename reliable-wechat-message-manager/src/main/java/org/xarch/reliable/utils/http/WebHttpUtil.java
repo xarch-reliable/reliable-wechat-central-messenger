@@ -2,6 +2,8 @@ package org.xarch.reliable.utils.http;
 
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,8 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class WebHttpUtil {
+	
+	private static final Logger logger = LoggerFactory.getLogger(WebHttpUtil.class);
 
 	private static final String customerUrl = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=";
 	
@@ -27,6 +31,8 @@ public class WebHttpUtil {
 	public Mono<String> sendCustomerMessage(String data){
 		
 		String access_token = getAccessToken();
+		logger.info("[postUrl] "+customerUrl+access_token);
+		logger.info("[data] "+data);
 		return WebClient.create().post().uri(customerUrl+access_token)
 			.accept(MediaType.APPLICATION_JSON_UTF8)
 			.body(Mono.just(JSON.toJSONString(data)),String.class)
