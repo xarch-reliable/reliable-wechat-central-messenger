@@ -1,0 +1,183 @@
+2019-10-01 16:02:00.658  INFO 10756 --- [main] .ReliableWechatMessageManagerApplication : No active profile set, falling back to default profiles: default
+2019-10-01 16:02:02.805  WARN 10756 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-10-01 16:02:02.818  WARN 10756 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-10-01 16:02:03.260  INFO 10756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-01 16:02:03.265  INFO 10756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-01 16:02:03.310  INFO 10756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 repository interfaces.
+2019-10-01 16:02:03.496  WARN 10756 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-10-01 16:02:03.971  INFO 10756 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8f217344-17e8-3097-b617-6ef77081ab7f
+2019-10-01 16:02:04.011  INFO 10756 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-01 16:02:04.025  INFO 10756 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-01 16:02:04.035  INFO 10756 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-01 16:02:04.237  INFO 10756 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:02:04.278  INFO 10756 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$37b95826] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:02:04.290  INFO 10756 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$134b6346] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:02:04.320  INFO 10756 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$4c330c13] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:02:04.349  INFO 10756 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:02:04.371  INFO 10756 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e8e19ff4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:02:04.809  WARN 10756 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerController': Unsatisfied dependency expressed through field 'customerDispath'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.xarch.reliable.service.CustomerDispatch' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-10-01 16:02:04.916  INFO 10756 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-10-01 16:02:04.917  INFO 10756 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application RELIABLE-WECHAT-MESSENGER with eureka with status DOWN
+2019-10-01 16:02:04.918  INFO 10756 --- [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-10-01 16:02:04.954  INFO 10756 --- [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-10-01 16:02:05.391 ERROR 10756 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field customerDispath in org.xarch.reliable.controller.CustomerController required a bean of type 'org.xarch.reliable.service.CustomerDispatch' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.xarch.reliable.service.CustomerDispatch' in your configuration.
+
+2019-10-01 16:03:04.126  INFO 16020 --- [main] .ReliableWechatMessageManagerApplication : No active profile set, falling back to default profiles: default
+2019-10-01 16:03:05.050  WARN 16020 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-10-01 16:03:05.056  WARN 16020 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-10-01 16:03:05.299  INFO 16020 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-01 16:03:05.302  INFO 16020 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-01 16:03:05.339  INFO 16020 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 repository interfaces.
+2019-10-01 16:03:05.460  WARN 16020 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-10-01 16:03:05.800  INFO 16020 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=93498524-ff79-3373-84f9-7636de2ae241
+2019-10-01 16:03:05.809  INFO 16020 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-01 16:03:05.818  INFO 16020 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-01 16:03:05.824  INFO 16020 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-01 16:03:05.989  INFO 16020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:06.034  INFO 16020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$979da9aa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:06.045  INFO 16020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$732fb4ca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:06.082  INFO 16020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$ac175d97] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:06.089  INFO 16020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:06.106  INFO 16020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$48c5f178] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:06.442  WARN 16020 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerController': Unsatisfied dependency expressed through field 'customerDispath'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerDispatchImpl': Unsatisfied dependency expressed through field 'webHttpUtil'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.xarch.reliable.utils.http.WebHttpUtil' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-10-01 16:03:06.486  INFO 16020 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-10-01 16:03:06.487  INFO 16020 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application RELIABLE-WECHAT-MESSENGER with eureka with status DOWN
+2019-10-01 16:03:06.489  INFO 16020 --- [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-10-01 16:03:06.504  INFO 16020 --- [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-10-01 16:03:06.758 ERROR 16020 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field webHttpUtil in org.xarch.reliable.service.impl.CustomerDispatchImpl required a bean of type 'org.xarch.reliable.utils.http.WebHttpUtil' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.xarch.reliable.utils.http.WebHttpUtil' in your configuration.
+
+2019-10-01 16:03:51.438  INFO 6608 --- [main] .ReliableWechatMessageManagerApplication : No active profile set, falling back to default profiles: default
+2019-10-01 16:03:52.320  WARN 6608 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-10-01 16:03:52.323  WARN 6608 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-10-01 16:03:52.519  INFO 6608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-01 16:03:52.522  INFO 6608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-01 16:03:52.556  INFO 6608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+2019-10-01 16:03:52.701  WARN 6608 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-10-01 16:03:52.917  INFO 6608 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ef51a25e-1ff5-3300-a8a9-d6f03747bc38
+2019-10-01 16:03:52.924  INFO 6608 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-01 16:03:52.932  INFO 6608 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-01 16:03:52.938  INFO 6608 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-01 16:03:53.039  INFO 6608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:53.084  INFO 6608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$d30c527c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:53.094  INFO 6608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$ae9e5d9c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:53.109  INFO 6608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$e7860669] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:53.114  INFO 6608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:53.124  INFO 6608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$84349a4a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-01 16:03:53.506  WARN 6608 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-01 16:03:53.506  INFO 6608 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-01 16:03:53.523  WARN 6608 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-10-01 16:03:53.523  INFO 6608 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-10-01 16:03:55.357  INFO 6608 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-10-01 16:03:55.534  INFO 6608 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-01 16:03:59.515  INFO 6608 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2019-10-01 16:04:01.643  INFO 6608 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2019-10-01 16:04:01.847  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-10-01 16:04:01.866  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-10-01 16:04:01.997  INFO 6608 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'reliable-wechat-messenger-1.springCloudBusInput' has 1 subscriber(s).
+2019-10-01 16:04:02.250  INFO 6608 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2019-10-01 16:04:02.377  INFO 6608 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2019-10-01 16:04:02.387  INFO 6608 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2019-10-01 16:04:02.402  INFO 6608 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2019-10-01 16:04:02.450  INFO 6608 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@2fea9a7b
+2019-10-01 16:04:02.528  INFO 6608 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2019-10-01 16:04:02.630  INFO 6608 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-01 16:04:02.630  INFO 6608 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'reliable-wechat-messenger-1.errorChannel' has 1 subscriber(s).
+2019-10-01 16:04:02.631  INFO 6608 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2019-10-01 16:04:04.891  INFO 6608 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://47.104.89.2:8010/
+2019-10-01 16:04:06.657  INFO 6608 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=rabbitmq-bus,weixin-info,logback-all-info, profiles=[dev], label=master, version=37b1cf60bd143b1ee57fb4bb3447fcf5420b6ece, state=null
+2019-10-01 16:04:06.657  INFO 6608 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/xarch-reliable/reliable-config-repository/reliable-config-repo/weixin/weixin-info.yml'}, MapPropertySource {name='https://github.com/xarch-reliable/reliable-config-repository/reliable-config-repo/logback/logback-all-info.yml'}, MapPropertySource {name='https://github.com/xarch-reliable/reliable-config-repository/reliable-config-repo/bus/rabbitmq-bus.yml'}]}
+2019-10-01 16:04:06.929  INFO 6608 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [39.98.38.238:8310]
+2019-10-01 16:04:07.365  INFO 6608 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#6def0632:0/SimpleConnection@2d3c501b [delegate=amqp://guest@39.98.38.238:8310/, localPort= 60075]
+2019-10-01 16:04:07.594  INFO 6608 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'reliable-wechat-messenger-1.springCloudBusOutput' has 1 subscriber(s).
+2019-10-01 16:04:07.613  INFO 6608 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-10-01 16:04:07.620  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-10-01 16:04:07.625  INFO 6608 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-10-01 16:04:07.625  INFO 6608 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-10-01 16:04:07.625  INFO 6608 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-10-01 16:04:07.625  INFO 6608 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-10-01 16:04:07.752  INFO 6608 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-10-01 16:04:07.754  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-10-01 16:04:07.754  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-10-01 16:04:07.754  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-10-01 16:04:07.755  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-10-01 16:04:07.755  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-10-01 16:04:07.755  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-10-01 16:04:07.755  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-10-01 16:04:08.252  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-10-01 16:04:08.256  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-10-01 16:04:08.261  INFO 6608 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-10-01 16:04:08.265  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1569917048265 with initial instances count: 29
+2019-10-01 16:04:08.269  INFO 6608 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application RELIABLE-WECHAT-MESSENGER with eureka with status UP
+2019-10-01 16:04:08.271  INFO 6608 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569917048271, current=UP, previous=STARTING]
+2019-10-01 16:04:08.293  INFO 6608 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RELIABLE-WECHAT-MESSENGER/localhost:reliable-wechat-messenger:8121: registering service...
+2019-10-01 16:04:08.366  INFO 6608 --- [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.yb0tRRpGTKCGRdr06QkmQQ, bound to: springCloudBus
+2019-10-01 16:04:08.486  INFO 6608 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RELIABLE-WECHAT-MESSENGER/localhost:reliable-wechat-messenger:8121 - registration status: 204
+2019-10-01 16:04:08.912  INFO 6608 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.yb0tRRpGTKCGRdr06QkmQQ.errors
+2019-10-01 16:04:09.025  INFO 6608 --- [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'reliable-wechat-messenger-1.springCloudBus.anonymous.yb0tRRpGTKCGRdr06QkmQQ.errors' has 1 subscriber(s).
+2019-10-01 16:04:09.026  INFO 6608 --- [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'reliable-wechat-messenger-1.springCloudBus.anonymous.yb0tRRpGTKCGRdr06QkmQQ.errors' has 2 subscriber(s).
+2019-10-01 16:04:09.621  INFO 6608 --- [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started inbound.springCloudBus.anonymous.yb0tRRpGTKCGRdr06QkmQQ
+2019-10-01 16:04:11.143  INFO 6608 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8121
+2019-10-01 16:04:11.145  INFO 6608 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8121
+2019-10-01 16:04:11.146  INFO 6608 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8121
+2019-10-01 16:04:11.152  INFO 6608 --- [main] .ReliableWechatMessageManagerApplication : Started ReliableWechatMessageManagerApplication in 31.74 seconds (JVM running for 33.227)
+2019-10-01 16:04:13.792  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-01 16:04:13.793  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application RELIABLE-WECHAT-MESSENGER with eureka with status DOWN
+2019-10-01 16:04:13.793  WARN 6608 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569917053793, current=DOWN, previous=UP]
+2019-10-01 16:04:13.793  INFO 6608 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RELIABLE-WECHAT-MESSENGER/localhost:reliable-wechat-messenger:8121: registering service...
+2019-10-01 16:04:13.889  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-10-01 16:04:13.893  INFO 6608 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RELIABLE-WECHAT-MESSENGER/localhost:reliable-wechat-messenger:8121 - registration status: 204
+2019-10-01 16:04:14.711  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-10-01 16:04:14.711  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped inbound.springCloudBus.anonymous.yb0tRRpGTKCGRdr06QkmQQ
+2019-10-01 16:04:14.713  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'reliable-wechat-messenger-1.springCloudBus.anonymous.yb0tRRpGTKCGRdr06QkmQQ.errors' has 1 subscriber(s).
+2019-10-01 16:04:14.714  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'reliable-wechat-messenger-1.springCloudBus.anonymous.yb0tRRpGTKCGRdr06QkmQQ.errors' has 0 subscriber(s).
+2019-10-01 16:04:14.717  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-01 16:04:14.718  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.channel.PublishSubscribeChannel    : Channel 'reliable-wechat-messenger-1.errorChannel' has 0 subscriber(s).
+2019-10-01 16:04:14.718  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2019-10-01 16:04:14.725  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-10-01 16:04:14.911  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: springCloudBusInput
+2019-10-01 16:04:14.911  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: springCloudBusOutput
+2019-10-01 16:04:14.912  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2019-10-01 16:04:14.912  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: springCloudBus.anonymous.yb0tRRpGTKCGRdr06QkmQQ.errors
+2019-10-01 16:04:14.912  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
+2019-10-01 16:04:14.913  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@2fea9a7b
+2019-10-01 16:04:14.913  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2019-10-01 16:04:14.914  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-10-01 16:04:17.917  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2019-10-01 16:04:18.052  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RELIABLE-WECHAT-MESSENGER/localhost:reliable-wechat-messenger:8121 - deregister  status: 200
+2019-10-01 16:04:18.059  INFO 6608 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
