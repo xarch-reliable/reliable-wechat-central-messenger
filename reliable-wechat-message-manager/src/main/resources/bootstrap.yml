@@ -12,7 +12,7 @@ spring:
     name: reliable-wechat-messenger
   cloud:
     config:
-      name: rabbitmq-bus,weixin-info,logback-all-info
+      name: rabbitmq-bus,weixin-info,logback-all-info,logback-web-debug,feign,ribbon-eager-load-business
       profile: dev
       label: master
       discovery:
