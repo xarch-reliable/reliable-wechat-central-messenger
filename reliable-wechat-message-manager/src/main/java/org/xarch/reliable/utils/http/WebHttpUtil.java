@@ -27,7 +27,6 @@ public class WebHttpUtil {
 	public Mono<String> sendCustomerMessage(String data){
 		
 		Mono<String> accessToken = WebHttpUtil.getAccessToken();
-		logger.info("WebHttpUtil::url : " +customerUrl+accessToken.block());
 		return accessToken.flatMap(r -> {
 			return WebClient.create().post().uri(customerUrl+r)
 			.accept(MediaType.APPLICATION_JSON_UTF8)
