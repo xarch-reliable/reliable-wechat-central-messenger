@@ -34,8 +34,8 @@ public class WebHttpUtil {
 		logger.info("[postUrl] "+customerUrl+access_token);
 		logger.info("[data] "+data);
 		return WebClient.create().post().uri(customerUrl+access_token)
-			.accept(MediaType.APPLICATION_JSON)
-			.body(Mono.just(JSON.toJSONString(data)),String.class)
+			.accept(MediaType.APPLICATION_JSON_UTF8)
+			.syncBody(data)
 			.retrieve().bodyToMono(String.class);
 	}
 }
