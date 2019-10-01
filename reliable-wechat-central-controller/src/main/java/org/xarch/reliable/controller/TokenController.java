@@ -1,5 +1,8 @@
 package org.xarch.reliable.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +24,13 @@ public class TokenController {
 	private ThreadFnc threadFnc;
 
 	@RequestMapping("/token/get")
-	public Mono<String> getAccessToken() {
+	public Map<String, Object> getAccessToken() {
+		 Map<String, Object> resmap =  new HashMap<String, Object>();
 		String access_token = weixinTokenServer.getAccessTokenResponse(new GetAccessTokenResponse()).getAccess_token();
 		if (StringUtils.isNotEmpty(access_token)) {
-			return Mono.just(access_token);
+			resmap.put("access_token", access_token);
 		}
-		return Mono.just("[AccessToken]error");
+		return resmap;
 	}
 
 	@RequestMapping("/ticket/get")

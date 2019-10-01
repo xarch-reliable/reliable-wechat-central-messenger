@@ -2,6 +2,7 @@ package org.xarch.reliable.service.wechat.menu;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -20,19 +21,20 @@ public class MenuManager {
 	private static final String MENU_GET_GET_URL = "https://api.weixin.qq.com/cgi-bin/menu/get?access_token=";
 	private static final String MENU_DEL_GET_URL = "https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=";
 
+	@Autowired
+	private WebHttpUtil webHttpUtil;
+	
 	/**
 	 * 创建菜单
 	 */
 	public Mono<String> createMenu(Menu menu){
 		
-		Mono<String> accessToken = WebHttpUtil.getAccessToken();
+		String accessToken = webHttpUtil.getAccessToken();
 		logger.info("MenuManager::create : menu = " + JSON.toJSONString(menu));
-		return accessToken.flatMap(r -> {
-			return WebClient.create().post().uri(MENU_CREATE_POST_URL+r)
+		return WebClient.create().post().uri(MENU_CREATE_POST_URL+accessToken)
 			.accept(MediaType.APPLICATION_JSON_UTF8)
 			.body(Mono.just(JSON.toJSONString(menu)),String.class)
 			.retrieve().bodyToMono(String.class);
-		});
 	}
 	
 	/**
@@ -40,11 +42,8 @@ public class MenuManager {
 	 */
 	public Mono<String> getMenu() {
 		
-		Mono<String> accessToken = WebHttpUtil.getAccessToken();
-		return accessToken.flatMap(r -> {
-			return WebClient.create().get().uri(MENU_GET_GET_URL+r).retrieve().bodyToMono(String.class);
-		});
-
+		String accessToken = webHttpUtil.getAccessToken();
+		return WebClient.create().get().uri(MENU_GET_GET_URL+accessToken).retrieve().bodyToMono(String.class);
 	}
 	
 	/**
@@ -52,10 +51,8 @@ public class MenuManager {
 	 */
 	public Mono<String> deleteMenu() {
 		
-		Mono<String> accessToken = WebHttpUtil.getAccessToken();
-		return accessToken.flatMap(r -> {
-			return WebClient.create().get().uri(MENU_DEL_GET_URL+r).retrieve().bodyToMono(String.class);
-		});
+		String accessToken = webHttpUtil.getAccessToken();
+		return WebClient.create().get().uri(MENU_DEL_GET_URL+accessToken).retrieve().bodyToMono(String.class);
 
 	}
 }
