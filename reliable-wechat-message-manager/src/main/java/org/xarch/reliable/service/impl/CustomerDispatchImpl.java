@@ -28,23 +28,14 @@ public class CustomerDispatchImpl implements CustomerDispatch {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public Map<String, Object> execute(Map<String, Object> data) {
-		Map<String, Object> responseMap = new HashMap<String, Object>();
+	public Mono<String> execute(Map<String, Object> data) {
 		String msgtype = (String)data.get("msgtype");
-		if (msgtype == null) {
-			responseMap.put("error_msg", "数据识别失败");
-			return responseMap;
-		}
 		String touseropenid = (String)data.get("touser");
-		if (touseropenid == null) {
-			responseMap.put("error_msg", "openid为空");
-			return responseMap;
-		}
 		return dispatch(touseropenid, msgtype, (Map<String, Object>)data.get("data"));
 	}
 
 	@Override
-	public Map<String, Object> dispatch(String touseropenid, String msgtype, Map<String, Object> bodyMap) {
+	public Mono<String> dispatch(String touseropenid, String msgtype, Map<String, Object> bodyMap) {
 		logger.info("CustomerDispatchImpl::dispatch() : msgtype = " + msgtype);
 		Map<String, Object> sendMap = new HashMap<String, Object>();
 		CustomerType msgType = CustomerType.valueOf(msgtype);
@@ -68,9 +59,7 @@ public class CustomerDispatchImpl implements CustomerDispatch {
 		}
 		sendMap.put("touser", touseropenid);
 		sendMap.put("msgtype", msgtype);
-		Mono<String> res = webHttpUtil.sendCustomerMessage(BaseResultTools.JsonObjectToStr(sendMap));
-		sendMap.put("data", res.block());
-		return sendMap;
+		return webHttpUtil.sendCustomerMessage(BaseResultTools.JsonObjectToStr(sendMap));
 	}
 
 }

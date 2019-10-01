@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.xarch.reliable.service.CustomerDispatch;
 
+import reactor.core.publisher.Mono;
+
 @RestController
 public class CustomerController {
 
@@ -15,7 +17,7 @@ public class CustomerController {
 	private CustomerDispatch customerDispath;
 	
 	@PostMapping("/message/send")
-	public Map<String, Object> MessageSendController(@RequestBody Map<String, Object> requestdata) {
+	public Mono<String> MessageSendController(@RequestBody Map<String, Object> requestdata) {
 
 		return customerDispath.execute(requestdata);
 	}
