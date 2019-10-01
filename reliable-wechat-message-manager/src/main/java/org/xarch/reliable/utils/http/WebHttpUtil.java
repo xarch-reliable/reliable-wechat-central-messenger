@@ -1,7 +1,5 @@
 package org.xarch.reliable.utils.http;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -11,10 +9,8 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class WebHttpUtil {
-	
-	private static final Logger logger = LoggerFactory.getLogger(WebHttpUtil.class);
-	
-	private static final String accessTokenUrl = "http://47.92.98.17:8110/token/get";
+		
+	private static final String accessTokenUrl = "http://47.104.89.2:8110/token/get";
 	private static final String customerUrl = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=";
 	
 	public static Mono<String> getAccessToken() {
