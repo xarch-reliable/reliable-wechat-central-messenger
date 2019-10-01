@@ -2,9 +2,11 @@ package org.xarch.reliable.service;
 
 import java.util.Map;
 
+import reactor.core.publisher.Mono;
+
 public interface CustomerDispatch {
 	
-	public Map<String, Object> execute(Map<String, Object> data);
+	public Mono<String> execute(Map<String, Object> data);
 	
-	public Map<String, Object> dispatch(String touseropenid, String msgtype, Map<String, Object> bodyMap);
+	public Mono<String> dispatch(String touseropenid, String msgtype, Map<String, Object> bodyMap);
 }

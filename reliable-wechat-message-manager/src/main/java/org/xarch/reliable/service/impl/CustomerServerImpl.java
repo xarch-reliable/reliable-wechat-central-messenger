@@ -8,7 +8,7 @@ import org.xarch.reliable.service.CustomerServer;
 
 @Service
 public class CustomerServerImpl implements CustomerServer {
-
+	
 	@Override
 	public Map<String, Object> onSendImage(String mediaId) {
 		Map<String, Object> datamap = new HashMap<String, Object>();
