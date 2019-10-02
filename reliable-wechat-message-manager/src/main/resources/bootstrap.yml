@@ -9,7 +9,7 @@ eureka:
       defaultZone: http://47.104.89.2:8000/eureka/
 spring:
   application:
-    name: reliable-wechat-messenger
+    name: reliable-wechat-message-manager
   cloud:
     config:
       name: rabbitmq-bus,weixin-info,logback-all-info,logback-web-debug,feign,ribbon-eager-load-business
