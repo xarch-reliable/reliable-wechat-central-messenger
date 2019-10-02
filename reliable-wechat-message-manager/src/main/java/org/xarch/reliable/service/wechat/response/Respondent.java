@@ -38,6 +38,9 @@ public class Respondent extends WechatManager {
 			case "富雪":
 				MessageBuilder.buildText(response, "她不是该去找图标吗");
 				break;
+			case "陈帅东":
+				MessageBuilder.buildText(response, "持续学习中ing...");
+				break;
 			case "季鑫":
 				MessageBuilder.buildText(response, "哎...");
 				break;
@@ -207,8 +210,11 @@ public class Respondent extends WechatManager {
 
 	@Override
 	protected void scan(WechatXmlRequestMessage request, WechatXmlResponseMessage response) {
-		MessageBuilder.buildText(response, "扫描事件");
-		
+		/* MessageBuilder.buildText(response, "扫描事件"); */
+		/* 扫码接收到活动事件推送*/
+		MessageBuilder.buildNews(response, request.getTitle(), request.getDescription(), 
+				request.getPicUrl(), 
+				request.getUrl());
 	}
 
 	@Override
