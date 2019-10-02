@@ -1,11 +1,16 @@
 package org.xarch.reliable.service.wechat.response;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.xarch.reliable.model.domain.request.SendLocationInfo;
 import org.xarch.reliable.model.domain.request.WechatXmlRequestMessage;
 import org.xarch.reliable.model.domain.response.WechatXmlResponseMessage;
+import org.xarch.reliable.service.feign.FeignDataManager;
 import org.xarch.reliable.service.wechat.WechatManager;
 import org.xarch.reliable.utils.xml.MessageBuilder;
 
@@ -13,7 +18,13 @@ import org.xarch.reliable.utils.xml.MessageBuilder;
 public class Respondent extends WechatManager {
 
 	private static final Logger logger = LoggerFactory.getLogger(WechatManager.class);
-
+	
+	private static final String shareUrlBase = "https://www.xarchgroup.net/test/dist/index.html?shareid=";
+	private static final String shareTitle = "快来靠谱吧！";
+	
+	@Autowired
+	private FeignDataManager feignDataManager;
+	
 	@Override
 	protected void onText(WechatXmlRequestMessage request, WechatXmlResponseMessage response) {
 		String content = request.getContent();
@@ -208,13 +219,26 @@ public class Respondent extends WechatManager {
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void scan(WechatXmlRequestMessage request, WechatXmlResponseMessage response) {
-		/* MessageBuilder.buildText(response, "扫描事件"); */
 		/* 扫码接收到活动事件推送*/
-		MessageBuilder.buildNews(response, request.getTitle(), request.getDescription(), 
-				request.getPicUrl(), 
-				request.getUrl());
+		String actid = request.getEventKey();
+		if(actid != null) {
+			Map<String, Object> sendmap = new HashMap<String, Object>();
+			Map<String, Object> datatmp = new HashMap<String, Object>();
+			datatmp.put("actid", actid);
+			sendmap.put("xrdataction", "getActinfoByActid");
+			sendmap.put("data", datatmp);
+			Map<String, Object> resmap = (Map<String, Object>)feignDataManager.doSupport2DataCenter(sendmap).get("body");
+
+			String creator_headimgurl = (String)resmap.get("creator_headimgurl");
+			String act_theme = (String)resmap.get("theme");
+			String shareUrl = shareUrlBase+actid;
+			MessageBuilder.buildNews(response, shareTitle, act_theme, creator_headimgurl, shareUrl);
+		}else {
+			MessageBuilder.buildText(response, "这个二维码有问题哦，请换个试试");
+		}
 	}
 
 	@Override
